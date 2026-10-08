@@ -1,6 +1,7 @@
 import Ionicons from "@expo/vector-icons/Ionicons";
 import { Tabs } from "expo-router";
 import type { ComponentProps } from "react";
+import TeamsHeader from "../../components/TeamsHeader";
 
 type IconName = ComponentProps<typeof Ionicons>["name"];
 
@@ -27,6 +28,9 @@ export default function TabLayout() {
   return (
     <Tabs
       screenOptions={({ route }) => ({
+        header: ({ options }) => (
+          <TeamsHeader title={options.title ?? route.name} />
+        ),
         headerStyle: { backgroundColor: "#141414" },
         headerTintColor: "#FFFFFF",
         tabBarActiveTintColor: "#8581F5",

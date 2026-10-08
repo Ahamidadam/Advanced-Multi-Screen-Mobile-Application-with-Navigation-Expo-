@@ -8,14 +8,12 @@ type ScreenPlaceholderProps = {
 };
 
 export default function ScreenPlaceholder({
-  title,
   description,
   children,
 }: ScreenPlaceholderProps) {
   return (
     <View style={styles.container}>
       <View style={styles.content}>
-        <Text style={styles.title}>{title}</Text>
         <Text style={styles.description}>{description}</Text>
         {children}
       </View>
@@ -31,11 +29,6 @@ const styles = StyleSheet.create({
   },
   content: {
     gap: 16,
-  },
-  title: {
-    color: "#FFFFFF",
-    fontSize: 26,
-    fontWeight: "700",
   },
   description: {
     color: "#A0A0A0",
